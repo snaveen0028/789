@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Samudalapalepu Naveen - Creative Developer & Designer. Crafting beautiful, interactive experiences with modern web technologies." />
+    <meta name="keywords" content="web developer, designer, react, typescript, portfolio" />
+    <meta name="author" content="Samudalapalepu Naveen" />
+    <title>Samudalapalepu Naveen - Creative Developer & Designer</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Samudalapalepu Naveen - Creative Developer & Designer" />
+    <meta property="og:description" content="Crafting beautiful, interactive experiences with modern web technologies." />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Samudalapalepu Naveen - Creative Developer & Designer" />
+    <meta property="twitter:description" content="Crafting beautiful, interactive experiences with modern web technologies." />
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://images.pexels.com" />
+    
+    <!-- Custom CSS for loading animation -->
+    <style>
+      #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #111827;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid #374151;
+        border-top: 3px solid #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading screen -->
+    <div id="loading">
+      <div class="loading-spinner"></div>
+    </div>
+    
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Remove loading screen once the app is loaded -->
+    <script>
+      window.addEventListener('load', () => {
+        const loading = document.getElementById('loading');
+        if (loading) {
+          loading.style.opacity = '0';
+          setTimeout(() => {
+            loading.remove();
+          }, 500);
+        }
+      });
+    </script>
+  </body>
+</html>
